@@ -101,35 +101,35 @@ setMethod("%*%", signature(x="cudaMatrix", y = "cudaMatrix"),
 #' @rdname cudaMatrix-colSums
 #' @aliases colSums,cudaMatrix
 #' @export
-setMethod("colSums",
-					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
-					function(x, na.rm, dims){
-						cuda_colSums(x)
-					})
-
-#' @rdname cudaMatrix-colSums
-#' @export
-setMethod("rowSums",
-					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
-					function(x, na.rm, dims){
-						cuda_rowSums(x)
-					})
-
-#' @rdname cudaMatrix-colSums
-#' @export
-setMethod("colMeans",
-					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
-					function(x, na.rm, dims){
-						cuda_colMeans(x)
-					})
-
-#' @rdname cudaMatrix-colSums
-#' @export
-setMethod("rowMeans",
-					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
-					function(x, na.rm, dims){
-						cuda_rowMeans(x)
-					})
+##  setMethod("colSums",
+##  					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
+##  					function(x, na.rm, dims){
+##  						cuda_colSums(x)
+##  					})
+##  
+##  #' @rdname cudaMatrix-colSums
+##  #' @export
+##  setMethod("rowSums",
+##  					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
+##  					function(x, na.rm, dims){
+##  						cuda_rowSums(x)
+##  					})
+##  
+##  #' @rdname cudaMatrix-colSums
+##  #' @export
+##  setMethod("colMeans",
+##  					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
+##  					function(x, na.rm, dims){
+##  						cuda_colMeans(x)
+##  					})
+##  
+##  #' @rdname cudaMatrix-colSums
+##  #' @export
+##  setMethod("rowMeans",
+##  					signature(x = "cudaMatrix", na.rm = "missing", dims = "missing"),
+##  					function(x, na.rm, dims){
+##  						cuda_rowMeans(x)
+##  					})
 
 #' @title The Number of Rows/Columns of a gpuRcudaMatrix
 #' @description \code{nrow} and \code{ncol} return the number of rows
