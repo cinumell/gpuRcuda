@@ -240,46 +240,46 @@ setMethod("[",
 # #' @param x An fcudaMatrix object
 # #' @param y An fcudaMatrix object
 # #' @export
-# setMethod("%*%", signature(x="fcudaMatrix", y = "fcudaMatrix"),
-# 					function(x,y)
-# 					{
-# 						if( dim(x)[2] != dim(y)[1]){
-# 							stop("Non-conformant matrices")
-# 						}
-# 						
-# 						C <- cudaMatrix(nrow=nrow(x), ncol=ncol(y), type="float")
-# 						
-# 						cpp_vienna_cudaMatrix_sgemm(x@address,
-# 																				y@address,
-# 																				C@address)
-# 						
-# 						return(C)
-# 					},
-# 					valueClass = "fcudaMatrix"
-# )
-# 
+ setMethod("%*%", signature(x="fcudaMatrix", y = "fcudaMatrix"),
+ 					function(x,y)
+ 					{
+ 						if( dim(x)[2] != dim(y)[1]){
+ 							stop("Non-conformant matrices")
+ 						}
+ 						
+ 						C <- cudaMatrix(nrow=nrow(x), ncol=ncol(y), type="float")
+ 						
+ 						cpp_vienna_cudaMatrix_sgemm(x@address,
+ 																				y@address,
+ 																				C@address)
+ 						
+ 						return(C)
+ 					},
+ 					valueClass = "fcudaMatrix"
+ )
+ 
 # #' Double Precision CUDA Matrix Multiplication
 # #' @param x An fcudaMatrix object
 # #' @param y An fcudaMatrix object
 # #' @export
-# setMethod("%*%", signature(x="cudaMatrix", y = "cudaMatrix"),
-# 					function(x,y)
-# 					{
-# 						if( dim(x)[2] != dim(y)[1]){
-# 							stop("Non-conformant matrices")
-# 						}
-# 						
-# 						if(!deviceHasDouble()){
-# 							stop("Selected GPU does not support double precision")
-# 						}else{
-# 							C <- cudaMatrix(nrow=nrow(x), ncol=ncol(y), type="double")
-# 							
-# 							cpp_vienna_cudaMatrix_dgemm(x@address,
-# 																					y@address,
-# 																					C@address)
-# 						}
-# 						
-# 						return(C)
-# 					},
-# 					valueClass = "dcudaMatrix"
-# )
+ setMethod("%*%", signature(x="cudaMatrix", y = "cudaMatrix"),
+ 					function(x,y)
+ 					{
+ 						if( dim(x)[2] != dim(y)[1]){
+ 							stop("Non-conformant matrices")
+ 						}
+ 						
+ 						if(!deviceHasDouble()){
+ 							stop("Selected GPU does not support double precision")
+ 						}else{
+ 							C <- cudaMatrix(nrow=nrow(x), ncol=ncol(y), type="double")
+ 							
+ 							cpp_vienna_cudaMatrix_dgemm(x@address,
+ 																					y@address,
+ 																					C@address)
+ 						}
+ 						
+ 						return(C)
+ 					},
+ 					valueClass = "dcudaMatrix"
+ )
