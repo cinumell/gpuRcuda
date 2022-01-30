@@ -4,6 +4,9 @@
 \name{nrow,gpuRcudaMatrix-method}
 \alias{nrow,gpuRcudaMatrix-method}
 \alias{nrow,cudaMatrix}
+\alias{nrow,nvMatrix}
+\alias{ncol,cudaMatrix}
+\alias{ncol,nvMatrix}
 \alias{ncol,gpuRcudaMatrix-method}
 \title{The Number of Rows/Columns of a gpuRcudaMatrix}
 \usage{

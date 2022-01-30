@@ -4,6 +4,7 @@
 \name{dim,gpuRcudaMatrix-method}
 \alias{dim,gpuRcudaMatrix-method}
 \alias{dim,cudaMatrix}
+\alias{dim,nvMatrix}
 \title{gpuRcuda dim method}
 \usage{
 \S4method{dim}{gpuRcudaMatrix}(x)
@@ -13,6 +14,9 @@
 }
 \value{
 A length 2 vector of the number of rows and columns respectively.
+}
+\description{
+gpuRcuda dim method
 }
 \author{
 Charles Determan Jr.
