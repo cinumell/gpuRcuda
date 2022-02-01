@@ -43,7 +43,7 @@ setMethod('cudaMatrix',
                           },
                           print("thrown in 1")
                           stop("this is an unrecognized 
-                                 or unimplemented data type")
+                                 or unimplemented data type #1")
             )
             
             return(data)
@@ -73,9 +73,8 @@ setMethod('cudaMatrix',
 														new("dcudaMatrix",
 																address = cudaMatEmtpy(nrow, ncol, 8L))
 													},
-                                                    print("thrown in 2")
 													stop("this is an unrecognized 
-                                 or unimplemented data type")
+                                 or unimplemented data type #2")
 						)
 						
 						return(data)
