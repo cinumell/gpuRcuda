@@ -41,7 +41,6 @@ setMethod('cudaMatrix',
                             new("dcudaMatrix",
                                 address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 8L))
                           },
-                          print("thrown in 1")
                           stop("this is an unrecognized 
                                  or unimplemented data type #1")
             )
