@@ -1,4 +1,5 @@
-CXX_STD = CXX11
+CXX_STD = CXX14
+CPP_STD = -std=c++14
 
 PKG_CPPFLAGS = @GPURCUDA_CPPFLAGS@
 PKG_CXXFLAGS = @GPURCUDA_CXXFLAGS@
@@ -30,7 +31,7 @@ gpuRcuda.so: $(OBJECTS)
 BACKEND = @BACKEND@
 ifeq "$(BACKEND)" "CUDA"
 %.o: %.cpp $(cpp_sources)
-		$(NVCC) $(CU_ARCH) -std=c++14 -DGPU -x cu -c $(CU_ARGS) $(CU_INCL) $< -o $@
+		$(NVCC) $(CU_ARCH) $(CPP_STD) -DGPU -x cu -c $(CU_ARGS) $(CU_INCL) $< -o $@
 
 else
 gpuRcuda.so: $(OBJECTS)
