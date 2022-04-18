@@ -28,7 +28,7 @@ gpu_Mat_mult <- function(A, B){
 				})
 	
 	return(C)
-
+}
 # cuda_colSums <- function(A){
 # 	
 # 	type <- typeof(A)
@@ -105,4 +105,3 @@ gpu_Mat_mult <- function(A, B){
 # 	
 # 	return(means)
 # }
-

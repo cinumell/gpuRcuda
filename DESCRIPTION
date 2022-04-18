@@ -23,7 +23,6 @@ URL: http://github.com/gpuRcore/gpuRcuda
 BugReports: http://github.com/gpuRcore/gpuRcuda/issues/new
 SystemRequirements: C++11
 Collate: 
-    'RcppExports.R'
     'class.R'
     'class-cudaMatrix.R'
     'class-cudaVector.R'
