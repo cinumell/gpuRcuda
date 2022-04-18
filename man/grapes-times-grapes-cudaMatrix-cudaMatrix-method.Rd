@@ -9,9 +9,9 @@
 \S4method{\%*\%}{cudaMatrix,cudaMatrix}(x, y)
 }
 \arguments{
-\item{x}{An fcudaMatrix object}
+\item{x}{An cudaMatrix object}
 
-\item{y}{An fcudaMatrix object}
+\item{y}{An cudaMatrix object}
 }
 \description{
 CUDA Matrix Multiplication
