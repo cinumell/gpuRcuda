@@ -4,12 +4,16 @@
 \name{length,gpuRcudaVector-method}
 \alias{length,gpuRcudaVector-method}
 \alias{length,nvVector}
+\alias{length,cudaVector}
 \title{Length of gpuRcudaVector}
 \usage{
 \S4method{length}{gpuRcudaVector}(x)
 }
 \arguments{
 \item{x}{A gpuRcudaVector object}
+}
+\description{
+Length of gpuRcudaVector
 }
 \author{
 Charles Determan Jr.

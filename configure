@@ -2929,7 +2929,6 @@ if test x"${RSCRIPT}" == x"yes" ; then
     rcpp_incl=`${R_HOME}/bin/Rscript -e 'Rcpp:::CxxFlags()'`
 		thrust_incl=`${R_HOME}/bin/Rscript -e 'cat(paste("-I", system.file("include", package = "thrust"), sep = ""))'`
 		RCPP_INCL="$rcpp_incl"
-
     THRUST_INCL="$thrust_incl"
 
 else

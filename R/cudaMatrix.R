@@ -42,7 +42,7 @@ setMethod('cudaMatrix',
                                 address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 8L))
                           },
                           stop("this is an unrecognized 
-                                 or unimplemented data type")
+                                 or unimplemented data type #1")
             )
             
             return(data)
@@ -73,7 +73,7 @@ setMethod('cudaMatrix',
 																address = cudaMatEmtpy(nrow, ncol, 8L))
 													},
 													stop("this is an unrecognized 
-                                 or unimplemented data type")
+                                 or unimplemented data type #2")
 						)
 						
 						return(data)

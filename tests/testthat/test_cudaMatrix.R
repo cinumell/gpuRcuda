@@ -1,4 +1,6 @@
-library(gpuRcuda)
+#.libPaths( c(.libPaths(), "/data/sse/scientific-software/cinumell/rmagma/gpuRcublas/lib") )
+library(gpuRcuda, lib.loc= "/data/sse/scientific-software/cinumell/rmagma/gpuRcublas/lib")
+library(testthat)
 context("cudaMatrix class")
 
 # set seed
@@ -37,104 +39,104 @@ test_that("double matrix values not returned correctly",{
 										info="double matrix elements not equivalent")
 })
 
-# 
-# test_that("cudaMatrix Single Precision Matrix multiplication successful", {
-#   
-#   has_gpu_skip()
-#   
-#   C <- A %*% B
-#   
-#   fgpuA <- cudaMatrix(A, type="float")
-#   fgpuB <- cudaMatrix(B, type="float")
-#   
-#   fgpuC <- fgpuA %*% fgpuB
-#   
-#   expect_is(fgpuC, "fcudaMatrix")
-#   expect_equal(fgpuC[,], C, tolerance=1e-07, 
-#                info="double matrix elements not equivalent")  
-# })
-# 
-# test_that("cudaMatrix Double Precision Matrix multiplication successful", {
-# 	
-# 	has_gpu_skip()
-# 	has_double_skip()
-# 	
-# 	C <- A %*% B
-# 	
-# 	dgpuA <- cudaMatrix(A, type="double")
-# 	dgpuB <- cudaMatrix(B, type="double")
-# 	
-# 	dgpuC <- dgpuA %*% dgpuB
-# 	
-# 	expect_is(dgpuC, "dcudaMatrix")
-# 	expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
-# 							 info="double matrix elements not equivalent")  
-# })
-# 
-# 
-# test_that("cudaMatrix Single Precision Matrix Subtraction successful", {
-#     
-#     has_gpu_skip()
-#     
-#     C <- A - B
-#     
-#     fgpuA <- cudaMatrix(A, type="float")
-#     fgpuB <- cudaMatrix(B, type="float")
-#     
-#     fgpuC <- fgpuA - fgpuB
-#     
-#     expect_is(fgpuC, "fcudaMatrix")
-#     expect_equal(fgpuC[,], C, tolerance=1e-07, 
-#                  info="float matrix elements not equivalent")  
-# })
-# 
-# test_that("cudaMatrix Single Precision Matrix Addition successful", {
-#     
-#     has_gpu_skip()
-#     
-#     C <- A + B
-#     
-#     fgpuA <- cudaMatrix(A, type="float")
-#     fgpuB <- cudaMatrix(B, type="float")
-#     
-#     fgpuC <- fgpuA + fgpuB
-#     
-#     expect_is(fgpuC, "fcudaMatrix")
-#     expect_equal(fgpuC[,], C, tolerance=1e-07, 
-#                  info="float matrix elements not equivalent")  
-# })
-# 
-# 
-# test_that("CUDA cudaMatrix Double Precision Matrix Subtraction successful", {
-#     
-#     has_gpu_skip()
-#     has_double_skip()
-#     
-#     C <- A - B
-#     
-#     dgpuA <- cudaMatrix(A, type="double")
-#     dgpuB <- cudaMatrix(B, type="double")
-#     
-#     dgpuC <- dgpuA - dgpuB
-#     
-#     expect_is(dgpuC, "dcudaMatrix")
-#     expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
-#                  info="double matrix elements not equivalent")  
-# })
-# 
-# test_that("CUDA cudaMatrix Double Precision Matrix Addition successful", {
-#     
-#     has_gpu_skip()
-#     has_double_skip()
-#     
-#     C <- A + B
-#     
-#     dgpuA <- cudaMatrix(A, type="double")
-#     dgpuB <- cudaMatrix(B, type="double")
-#     
-#     dgpuC <- dgpuA + dgpuB
-#     
-#     expect_is(dgpuC, "dcudaMatrix")
-#     expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
-#                  info="double matrix elements not equivalent")  
-# })
+
+test_that("cudaMatrix Single Precision Matrix multiplication successful", {
+  
+  #has_gpu_skip()
+  
+  C <- A %*% B
+  
+  fgpuA <- cudaMatrix(A, type="float")
+  fgpuB <- cudaMatrix(B, type="float")
+  
+  fgpuC <- fgpuA %*% fgpuB
+  
+  expect_is(fgpuC, "fcudaMatrix")
+  expect_equal(fgpuC[,], C, tolerance=1e-07, 
+               info="double matrix elements not equivalent")  
+})
+
+test_that("cudaMatrix Double Precision Matrix multiplication successful", {
+	
+	#has_gpu_skip()
+	#has_double_skip()
+	
+	C <- A %*% B
+	
+	dgpuA <- cudaMatrix(A, type="double")
+	dgpuB <- cudaMatrix(B, type="double")
+	
+	dgpuC <- dgpuA %*% dgpuB
+	
+	expect_is(dgpuC, "dcudaMatrix")
+	expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
+							 info="double matrix elements not equivalent")  
+})
+
+
+test_that("cudaMatrix Single Precision Matrix Subtraction successful", {
+    
+   # has_gpu_skip()
+    
+    C <- A - B
+    
+    fgpuA <- cudaMatrix(A, type="float")
+    fgpuB <- cudaMatrix(B, type="float")
+    
+    fgpuC <- fgpuA - fgpuB
+    
+    expect_is(fgpuC, "fcudaMatrix")
+    expect_equal(fgpuC[,], C, tolerance=1e-07, 
+                 info="float matrix elements not equivalent")  
+})
+
+test_that("cudaMatrix Single Precision Matrix Addition successful", {
+    
+   # has_gpu_skip()
+    
+    C <- A + B
+    
+    fgpuA <- cudaMatrix(A, type="float")
+    fgpuB <- cudaMatrix(B, type="float")
+    
+    fgpuC <- fgpuA + fgpuB
+    
+    expect_is(fgpuC, "fcudaMatrix")
+    expect_equal(fgpuC[,], C, tolerance=1e-07, 
+                 info="float matrix elements not equivalent")  
+})
+
+
+test_that("CUDA cudaMatrix Double Precision Matrix Subtraction successful", {
+    
+    #has_gpu_skip()
+    #has_double_skip()
+    
+    C <- A - B
+    
+    dgpuA <- cudaMatrix(A, type="double")
+    dgpuB <- cudaMatrix(B, type="double")
+    
+    dgpuC <- dgpuA - dgpuB
+    
+    expect_is(dgpuC, "dcudaMatrix")
+    expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
+                 info="double matrix elements not equivalent")  
+})
+
+test_that("CUDA cudaMatrix Double Precision Matrix Addition successful", {
+    
+    #has_gpu_skip()
+    #has_double_skip()
+    
+    C <- A + B
+    
+    dgpuA <- cudaMatrix(A, type="double")
+    dgpuB <- cudaMatrix(B, type="double")
+    
+    dgpuC <- dgpuA + dgpuB
+    
+    expect_is(dgpuC, "dcudaMatrix")
+    expect_equal(dgpuC[,], C, tolerance=.Machine$double.eps ^ 0.5, 
+                 info="double matrix elements not equivalent")  
+})

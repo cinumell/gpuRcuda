@@ -26,6 +26,9 @@
 
 \item{drop}{missing}
 }
+\description{
+Extract gpuRcuda elements
+}
 \author{
 Charles Determan Jr.
 }
