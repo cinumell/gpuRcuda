@@ -591,6 +591,7 @@ NVCC
 CU_INCL
 GPURCUDA_CXXFLAGS
 GPURCUDA_CPPFLAGS
+CUB_INCL
 THRUST_INCL
 RCPP_INCL
 RSCRIPT
@@ -2927,9 +2928,10 @@ if test x"${RSCRIPT}" == x"yes" ; then
 		R_HOME=`Rscript -e 'cat(R.home())'`
 
     rcpp_incl=`${R_HOME}/bin/Rscript -e 'Rcpp:::CxxFlags()'`
+    cub_incl=`${R_HOME}/bin/Rscript -e 'cat(paste("-I", system.file("include", package = "cub"), sep = ""))'`
 		thrust_incl=`${R_HOME}/bin/Rscript -e 'cat(paste("-I", system.file("include", package = "thrust"), sep = ""))'`
 		RCPP_INCL="$rcpp_incl"
-
+    CUB_INCL="$cub_incl"
     THRUST_INCL="$thrust_incl"
 
 else
