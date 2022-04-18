@@ -11,7 +11,7 @@ cpp_sharedlibs = $(patsubst %.cpp, %.o, $(cpp_sources))
 
 OBJECTS = $(cpp_sharedlibs)
 
-R_INC = -I/../inst/include @R_INCL@ @RCPP_INCL@ @THRUST_INCL@ @CU_INCL@ @CUB_INCL@
+R_INC = -I/../inst/include @R_INCL@ @RCPP_INCL@ @THRUST_INCL@ @CU_INCL@
 CXX_ARGS = @R_CPIC@
 
 CU_ARGS = -Xcompiler -fPIC -Xcudafe --diag_suppress=code_is_unreachable
