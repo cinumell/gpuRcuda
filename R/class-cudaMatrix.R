@@ -76,6 +76,29 @@ setClass("fcudaMatrix",
          contains = "cudaMatrix")
 
 
+#' @title f32cudaMatrix Class
+#' @description An float32 type matrix in the S4 \code{cudaMatrix}
+#' representation.
+#' @section Slots:
+#'  \describe{
+#'      \item{\code{address}:}{A float typed R matrix}
+#'  }
+#' @name f32cudaMatrix-class
+#' @rdname f32cudaMatrix-class
+#' @author Charles Determan Jr.
+#' @seealso \code{\link{cudaMatrix-class}}, 
+#' \code{\link{icudaMatrix-class}},
+#' \code{\link{dcudaMatrix-class}}
+#' @export
+setClass("f32cudaMatrix",
+         contains = "cudaMatrix",
+         validity = function(object) {
+           if( typeof(object) != "float32"){
+             return("f32cudaMatrix must be of type 'float32'")
+           }
+           TRUE
+         })
+
 #' @title dcudaMatrix Class
 #' @description An integer type matrix in the S4 \code{cudaMatrix}
 #' representation.
