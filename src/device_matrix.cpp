@@ -1,6 +1,6 @@
 
-
 #include "gpuRcuda/device_matrix.hpp"
+#define FLOAT(x) ((float *) INTEGER(x))
 
 // empty device_matrix
 template <typename T>
@@ -39,8 +39,8 @@ sexpToDeviceMatrix(SEXP x,
 	case 4:
 		return sexpToDeviceMatrix<int>(INTEGER(x), nr, nc);
 	case 6:
-		Rcpp::exception("float not yet implemented");
-		// return sexpToDeviceMatrix<float>(FLOAT(ptrA_, nr, nc);
+		//Rcpp::exception("float not yet implemented");
+		return sexpToDeviceMatrix<float>(FLOAT(x), nr, nc);
 	case 8:
 		return sexpToDeviceMatrix<double>(REAL(x), nr, nc);
 	default:
@@ -59,9 +59,9 @@ cudaMatToSEXP(SEXP ptrA,
 		cudaMatToSEXP<int>(ptrA, INTEGER(x));
 		return;
 	case 6:
-		Rcpp::exception("float not yet implemented");
-		// cudaMatToSEXP<float>(FLOAT(ptrA_, nr, nc);
-		// return;
+		//Rcpp::exception("float not yet implemented");
+		cudaMatToSEXP<float>(ptrA, FLOAT(x));
+		return;
 	case 8:
 		cudaMatToSEXP<double>(ptrA, REAL(x));
 		return;
@@ -81,8 +81,8 @@ cudaMatEmtpy(int nr,
 	case 4:
 		return cudaMatEmpty<int>(nr, nc);
 	case 6:
-		Rcpp::exception("float not yet implemented");
-		// return cudaMatEmpty<float>(nr, nc);
+		//Rcpp::exception("float not yet implemented");
+	    return cudaMatEmpty<float>(nr, nc);
 	case 8:
 		return cudaMatEmpty<double>(nr, nc);
 	default:

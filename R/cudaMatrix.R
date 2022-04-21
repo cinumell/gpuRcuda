@@ -37,6 +37,10 @@ setMethod('cudaMatrix',
                             new("fcudaMatrix", 
                                 address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 6L))
                           },
+                          float32 = {
+                            new("fcudaMatrix", 
+                                address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 6L))
+                          },
                           double = {
                             new("dcudaMatrix",
                                 address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 8L))
@@ -65,6 +69,10 @@ setMethod('cudaMatrix',
 																address = cudaMatEmtpy(nrow, ncol, 4L))
 													},
 													float = {
+														new("fcudaMatrix", 
+																address = cudaMatEmtpy(nrow, ncol, 6L))
+													},
+													float32 = {
 														new("fcudaMatrix", 
 																address = cudaMatEmtpy(nrow, ncol, 6L))
 													},

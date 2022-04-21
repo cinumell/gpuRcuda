@@ -58,29 +58,6 @@ setClass("icudaMatrix",
            TRUE
          })
 
-#' @title i64cudaMatrix Class
-#' @description An integer64 type matrix in the S4 \code{cudaMatrix}
-#' representation.
-#' @section Slots:
-#'  \describe{
-#'      \item{\code{address}:}{A integer64 typed R matrix}
-#'  }
-#' @name i64cudaMatrix-class
-#' @rdname i64cudaMatrix-class
-#' @author Chaitanya Inumella
-#' @seealso \code{\link{cudaMatrix-class}}, 
-#' \code{\link{i64cudaMatrix-class}},
-#' \code{\link{dcudaMatrix-class}}
-#' @export
-setClass("i64cudaMatrix",
-         contains = "cudaMatrix",
-         validity = function(object) {
-           if( typeof(object) != "integer64"){
-             return("i64cudaMatrix must be of type 'integer64'")
-           }
-           TRUE
-         })
-
 #' @title fcudaMatrix Class
 #' @description An integer type matrix in the S4 \code{cudaMatrix}
 #' representation.
