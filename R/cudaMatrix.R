@@ -20,6 +20,10 @@ setGeneric("cudaMatrix", function(data = NA, ncol=NA, nrow=NA, type=NULL, ...){
   standardGeneric("cudaMatrix")
 })
 
+setGeneric("float32", function(x, ...){
+    standardGeneric("float32")
+})
+
 #' @rdname cudaMatrix-methods
 #' @aliases cudaMatrix,matrix
 setMethod('cudaMatrix', 
