@@ -1,7 +1,7 @@
 
 # need code to reshape if dimensions differ from input
-
-#' @importFrom float float32
+#' @importFrom float coerce
+#' @importFrom float initialization
 
 #' @title Construct a cudaMatrix
 #' @description Construct a cudaMatrix of a class that inherits

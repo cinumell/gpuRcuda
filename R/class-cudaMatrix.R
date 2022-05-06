@@ -1,4 +1,5 @@
-#' @importFrom float float32
+#' @importFrom float coerce
+#' @importFrom float initialization
 
 #' @title cudaMatrix Class
 #' @description This class refers to gpuRcuda matrix
