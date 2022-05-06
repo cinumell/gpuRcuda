@@ -1,3 +1,5 @@
+#' @importFrom float float32
+
 #' @title cudaMatrix Class
 #' @description This class refers to gpuRcuda matrix
 #' objects that are on the device.
@@ -85,7 +87,7 @@ setClass("fcudaMatrix",
 #'  }
 #' @name f32cudaMatrix-class
 #' @rdname f32cudaMatrix-class
-#' @author Charles Determan Jr.
+#' @author Chaitanya Inumella.
 #' @seealso \code{\link{cudaMatrix-class}}, 
 #' \code{\link{icudaMatrix-class}},
 #' \code{\link{dcudaMatrix-class}}

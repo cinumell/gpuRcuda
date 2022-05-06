@@ -21,5 +21,5 @@ representation.
 \code{\link{dcudaMatrix-class}}
 }
 \author{
-Charles Determan Jr.
+Chaitanya Inumella.
 }

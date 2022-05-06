@@ -1,6 +1,8 @@
 
 # need code to reshape if dimensions differ from input
 
+#' @importFrom float float32
+
 #' @title Construct a cudaMatrix
 #' @description Construct a cudaMatrix of a class that inherits
 #' from \code{cudaMatrix}
@@ -31,7 +33,7 @@ setMethod('cudaMatrix',
 
             if (is.null(type)) type <- typeof(data)
             
-            data = switch(type,
+                data = switch(type,
                           integer = {
                             new("icudaMatrix", 
                                 address = sexpToDeviceMatrix(data, nrow(data), ncol(data), type = 4L))
