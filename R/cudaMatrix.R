@@ -26,7 +26,8 @@ setGeneric("cudaMatrix", function(data = NA, ncol=NA, nrow=NA, type=NULL, ...){
 setMethod('cudaMatrix', 
           signature(data = 'matrix'),
           function(data, type=NULL){
-            print("type of data is ", typeof(data),"\n")
+            
+            cat("type of data is ", typeof(data),"\n")
 
             if (is.null(type)) type <- typeof(data)
             
