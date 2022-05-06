@@ -1,25 +1,6 @@
 
 # need code to reshape if dimensions differ from input
 
-#' @title float32 datatype generic function
-#' @description Construct a cudaMatrix of a class that inherits
-#' from \code{float32}
-#' @param data An object that is or can be converted to a 
-#' \code{datatype} object
-#' @param ncol An integer specifying the number of columns
-#' @param nrow An integer specifying the number of rows
-#' @param type A character string specifying the type of cudaMatrix.  Default
-#' is NULL where type is inherited from the source data type.
-#' @param ... Additional method to pass to cudaMatrix methods
-#' @return A float32 object
-#' @docType methods
-#' @rdname float32-methods
-#' @author Chaitanya Inumella
-#' @export
-setGeneric("float32", function(x, ...){
-    standardGeneric("float32")
-})
-
 #' @title Construct a cudaMatrix
 #' @description Construct a cudaMatrix of a class that inherits
 #' from \code{cudaMatrix}
@@ -45,7 +26,8 @@ setGeneric("cudaMatrix", function(data = NA, ncol=NA, nrow=NA, type=NULL, ...){
 setMethod('cudaMatrix', 
           signature(data = 'matrix'),
           function(data, type=NULL){
-            
+            print("type of data is ", typeof(data),"\n")
+
             if (is.null(type)) type <- typeof(data)
             
             data = switch(type,
