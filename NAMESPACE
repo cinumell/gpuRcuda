@@ -2,6 +2,7 @@
 
 export(cudaMatrix)
 export(cudaVector)
+export(float32)
 export(nvMatrix)
 export(nvVector)
 exportClasses(cudaMatrix)
